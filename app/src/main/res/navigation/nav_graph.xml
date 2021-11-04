@@ -9,5 +9,18 @@
         android:id="@+id/listFragment"
         android:name="com.lost.checkapartment.view.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_buildingFragment"
+            app:destination="@id/buildingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/buildingFragment"
+        android:name="com.lost.checkapartment.view.BuildingFragment"
+        android:label="fragment_building"
+        tools:layout="@layout/fragment_building" >
+        <action
+            android:id="@+id/action_buildingFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
 </navigation>
