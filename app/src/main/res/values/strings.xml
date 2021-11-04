@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CheckApartment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="et_correo">Ingrese su correo aquí</string>
+    <string name="et_password">Ingrese su password aquí</string>
+    <string name="btn_ir">Ingresar</string>
+    <string name="tv_nombre_depto">nombre_departamento</string>
+    <string name="tv_numero_depto">Numero_de_Departamento</string>
+    <string name="tv_direccion_depto">Direccion_de_Departamento</string>
+</resources>
