@@ -8,4 +8,14 @@
     <string name="tv_nombre_depto">nombre_departamento</string>
     <string name="tv_numero_depto">Numero_de_Departamento</string>
     <string name="tv_direccion_depto">Direccion_de_Departamento</string>
+    <string name="cb_luces">Luces de la unidad</string>
+    <string name="cb_dormitorio">Elementos del dormitorio</string>
+    <string name="cb_cocina">Elementos de la cocina</string>
+    <string name="cb_bano">Elementos del baño</string>
+    <string name="rb_normal">Estado de las terminaciones normal</string>
+    <string name="rb_regular">Estado de las terminaciones regular</string>
+    <string name="rb_mala">Estado de las terminaciones malas</string>
+    <string name="tv_resultado">EL PUNTAJE FINAL ES:</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="btn_correo">Enviar Email</string>
 </resources>
