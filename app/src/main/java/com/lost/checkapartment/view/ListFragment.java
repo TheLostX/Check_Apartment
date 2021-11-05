@@ -43,7 +43,9 @@ public class ListFragment extends Fragment implements ListFragmentView {
     @Override
     public void changeFragment(int position) {
 
-        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_listFragment_to_buildingFragment, presenter.getInformation(position));
+        Navigation.findNavController(binding.getRoot())
+                .navigate(R.id.action_listFragment_to_buildingFragment,
+                presenter.getInformation(position));
 
     }
 }

@@ -14,12 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.lost.checkapartment.R;
 import com.lost.checkapartment.model.ApartmentData;
 import com.lost.checkapartment.view.ListFragment;
+import com.lost.checkapartment.view.ListFragmentView;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomViewHolder> {
 
-    ListFragment listFragment;
+    private ListFragmentView listFragment;
 
-    public CustomAdapter(ListFragment listFragment) {
+    public CustomAdapter(ListFragmentView listFragment) {
         this.listFragment = listFragment;
     }
 

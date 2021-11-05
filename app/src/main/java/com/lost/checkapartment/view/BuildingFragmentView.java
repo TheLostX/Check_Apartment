@@ -15,5 +15,7 @@ public interface BuildingFragmentView {
 
     void showErrorMessage();
     void showFinalScore(int finalScore);
-    void enableEmailButton(int finalScore);
+    void enableEmailButton();
+    void disableEmailButton();
+
 }

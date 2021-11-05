@@ -53,11 +53,20 @@ public class BuildingPresenter implements BuildingPresenterInterface {
         }
         else{
             view.showErrorMessage();
+            return;
         }
+
+
+        if(resultadoFinal<130){
+            view.enableEmailButton();
+        }
+        else{
+            view.disableEmailButton();
+        }
+
 
         view.showFinalScore(resultadoFinal);
 
-        view.enableEmailButton(resultadoFinal);
 
     }
 

@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.lost.checkapartment.R;
 import com.lost.checkapartment.databinding.FragmentBuildingBinding;
 import com.lost.checkapartment.model.ApartmentData;
@@ -43,6 +45,7 @@ public class BuildingFragment extends Fragment implements BuildingFragmentView {
             //changeApp();
             String [] emails = {"carlos.z.jeria@gmail.com"};
             composeEmail(emails, "nuevo email" , "Body");
+
         });
 
         return binding.getRoot();
@@ -50,6 +53,7 @@ public class BuildingFragment extends Fragment implements BuildingFragmentView {
 
     @Override
     public void showInformation() {
+
         int pos = getArguments().getInt("position");
 
         String data = ApartmentData.apartmentList().get(pos).getUrlImageBuilding();
@@ -107,13 +111,13 @@ public class BuildingFragment extends Fragment implements BuildingFragmentView {
     }
 
     @Override
-    public void enableEmailButton(int finalScore) {
+    public void enableEmailButton() {
+        binding.btnCorreo.setEnabled(true);
+    }
 
-        if (finalScore < 130) {
-            binding.btnCorreo.setEnabled(true);
-        } else {
-            binding.btnCorreo.setEnabled(false);
-        }
+    @Override
+    public void disableEmailButton(){
+        binding.btnCorreo.setEnabled(false);
     }
 
     public void changeApp() {
@@ -144,6 +148,11 @@ public class BuildingFragment extends Fragment implements BuildingFragmentView {
         if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
             startActivity(intent);
         }
+    }
+
+    private void doSnackBar(){
+
+        Snackbar.make(getView(), "holaaa", Snackbar.LENGTH_SHORT).show();
     }
 
 
