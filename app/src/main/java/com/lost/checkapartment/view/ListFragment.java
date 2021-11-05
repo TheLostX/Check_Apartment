@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lost.checkapartment.R;
+import com.lost.checkapartment.presenter.ListPresenter;
 import com.lost.checkapartment.recycleradapter.CustomAdapter;
 import com.lost.checkapartment.databinding.FragmentListBinding;
 
@@ -18,6 +19,7 @@ import com.lost.checkapartment.databinding.FragmentListBinding;
 public class ListFragment extends Fragment implements ListFragmentView {
 
     FragmentListBinding binding;
+    private ListPresenter presenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,6 +27,8 @@ public class ListFragment extends Fragment implements ListFragmentView {
 
         binding = FragmentListBinding.inflate(inflater, container, false);
         setAdapter();
+
+        presenter = new ListPresenter();
 
         return binding.getRoot();
     }
@@ -39,9 +43,7 @@ public class ListFragment extends Fragment implements ListFragmentView {
     @Override
     public void changeFragment(int position) {
 
-        Bundle bundle = new Bundle();
-        bundle.putInt("position", position);
-        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_listFragment_to_buildingFragment, bundle);
+        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_listFragment_to_buildingFragment, presenter.getInformation(position));
 
     }
 }

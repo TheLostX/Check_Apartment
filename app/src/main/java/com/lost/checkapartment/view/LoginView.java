@@ -4,4 +4,5 @@ public interface LoginView {
     void showErrorMessage();
     void changeActivity();
     void disableButton();
+    void cleanFields();
 }

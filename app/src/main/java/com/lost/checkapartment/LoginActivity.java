@@ -34,13 +34,13 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     private void setOnClickListener(){
 
         binding.btnIr.setOnClickListener(v ->{
-            presenter.validatePassword(binding.etPassword.getText().toString());
+            presenter.validateUser(binding.etPassword.getText().toString(), binding.etEmail.getText().toString());
         });
     }
 
     @Override
     public void showErrorMessage() {
-        Toast.makeText(this, "Password Incorrecto", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Password o email Incorrecto", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -52,6 +52,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Override
     public void disableButton() {
         binding.btnIr.setEnabled(false);
+    }
+
+    @Override
+    public void cleanFields() {
+        binding.etEmail.getText().clear();
+        binding.etPassword.getText().clear();
     }
 
 }

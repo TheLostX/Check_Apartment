@@ -1,6 +1,11 @@
 package com.lost.checkapartment.presenter;
 
+import android.util.Patterns;
+
 import com.lost.checkapartment.view.LoginView;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class LoginPresenter implements LoginPresenterInterface{
 
@@ -13,13 +18,17 @@ public class LoginPresenter implements LoginPresenterInterface{
 
 
     @Override
-    public void validatePassword(String password) {
+    public void validateUser(String password, String email) {
 
-        if(password.equals("123Pass")){
+        Pattern p = Patterns.EMAIL_ADDRESS;
+        Matcher matcher = p.matcher(email);
+
+        if(password.equals("123Pass") && matcher.find()){
             view.changeActivity();
         }
         else{
             view.showErrorMessage();
+            view.cleanFields();
             contador++;
         }
         if(contador==3){

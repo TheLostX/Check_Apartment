@@ -1,11 +1,14 @@
 package com.lost.checkapartment.presenter;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+
 import com.lost.checkapartment.view.BuildingFragmentView;
 
 public class BuildingPresenter implements BuildingPresenterInterface {
 
-
     private BuildingFragmentView view;
+
     public BuildingPresenter(BuildingFragmentView view) {
         this.view = view;
     }
@@ -53,6 +56,13 @@ public class BuildingPresenter implements BuildingPresenterInterface {
         }
 
         view.showFinalScore(resultadoFinal);
+
+        view.enableEmailButton(resultadoFinal);
+
+    }
+
+    @Override
+    public void changeApp() {
 
     }
 }

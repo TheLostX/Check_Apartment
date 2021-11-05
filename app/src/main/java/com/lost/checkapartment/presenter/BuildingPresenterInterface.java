@@ -4,5 +4,6 @@ public interface BuildingPresenterInterface {
 
     void changeFragment();
     void calculateScore();
+    void changeApp();
 
 }
