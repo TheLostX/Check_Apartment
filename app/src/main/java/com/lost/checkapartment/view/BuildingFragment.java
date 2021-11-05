@@ -40,7 +40,9 @@ public class BuildingFragment extends Fragment implements BuildingFragmentView {
         });
 
         binding.btnCorreo.setOnClickListener(v -> {
-            changeApp();
+            //changeApp();
+            String [] emails = {"carlos.z.jeria@gmail.com"};
+            composeEmail(emails, "nuevo email" , "Body");
         });
 
         return binding.getRoot();
@@ -130,5 +132,19 @@ public class BuildingFragment extends Fragment implements BuildingFragmentView {
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, uri);
         startActivity(Intent.createChooser(emailIntent, chooserTitle));
     }
+
+    public void composeEmail(String[] addresses, String subject, String text) {
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("message/rfc822");
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+
+        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
 
 }
